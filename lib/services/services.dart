@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart' show FirebaseFirestore;
 import 'package:flutter/material.dart';
 
+
 class services{
   static Future<void> createUser(BuildContext context,String name, int age) async {
     try {
@@ -9,7 +10,7 @@ class services{
         "age": age,
       });
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("✅ User Added")),
+        const SnackBar(content: Text(" User Added")),
       );
     } catch (e) {
       print("❌ Error: $e");
@@ -24,7 +25,7 @@ class services{
           .doc(docId)
           .update({"name": newName, "age": newAge});
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("✅ User Updated")),
+        const SnackBar(content: Text(" User Updated")),
       );
     } catch (e) {
       print("❌ Error: $e");
